@@ -1,54 +1,19 @@
 {
   "contacts": [
     {
-      "name": "aa",
-      "number": "09845555555",
+      "name": "nasrin",
+      "number": "09184431846",
       "id": 1
     },
     {
-      "name": "ab",
-      "number": "09184451456",
+      "name": "sara",
+      "number": "09184431846",
       "id": 2
     },
     {
-      "name": "ee",
-      "number": "09184451456",
+      "name": "ali",
+      "number": "09147584877",
       "id": 3
-    },
-    {
-      "name": "ww",
-      "number": "09184451456",
-      "id": 4
-    },
-    {
-      "name": "sss",
-      "number": "09187755477",
-      "id": 5
-    },
-    {
-      "name": "ss",
-      "number": "09184487568",
-      "id": 6
-    },
-    {
-      "name": "sss",
-      "number": "09184457846",
-      "id": 7
-    },
-    {
-      "name": "]]",
-      "number": "09184464512",
-      "id": 8
-    },
-    {
-      "name": "mp",
-      "number": "09184456874",
-      "id": 9
-    },
-    {
-      "name": "qq",
-      "number": "09184451278",
-      "id": 10
     }
   ]
 }

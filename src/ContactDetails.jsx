@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 const CONTACTS_LIST_API = "http://localhost:3000/contacts";
 import axios from "axios";
-
 export default function ContactDetails() {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(false);

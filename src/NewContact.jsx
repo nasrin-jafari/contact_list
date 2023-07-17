@@ -7,21 +7,15 @@ export default function NewContact() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [status, setStatus] = useState({ success: "", error: "" });
-  const [isLoading, setIsLoading] = useState(false);
   const addContactHandler = async () => {
     try {
-      setIsLoading(true);
       await axios.post(CONTACTS_LIST_API, { name, number });
-      setIsLoading(false);
-      console.log("Contact added successfully!");
-      setStatus({ error: "", success: "Contact added successfully." });
     } catch (error) {
-      setIsLoading(false);
       setStatus({
-        error: "There is a problem. Please try leter",
+        error: "There is a problem. Plz try again",
         success: "",
       });
-      console.log("Error adding contact:", error);
+      console.log(error);
     }
   };
   const formSubmitHandler = (e) => {
@@ -30,22 +24,27 @@ export default function NewContact() {
       addContactHandler();
       setName("");
       setNumber("");
-
       setStatus({
-        error: "Phone number starts with 09 and must be 11 characters.",
-        success: "",
+        error: "",
+        success: "contact saved",
       });
+      setTimeout(() => {
+        setStatus({ success: "" });
+      }, 3000);
     } else
       setStatus({
-        error: "Name field cannot be empty.",
+        error: "Name and number cannot be empty.",
         success: "",
       });
+    setTimeout(() => {
+      setStatus({ error: "" });
+    }, 3000);
   };
   return (
     <div className="container">
       <div className="title">
         <h2>Add new Contact</h2>
-        <Link to="/" className="btn-back" >
+        <Link to="/" className="btn-back">
           Back to Home
         </Link>
       </div>
@@ -64,8 +63,12 @@ export default function NewContact() {
           onChange={(e) => setNumber(e.target.value)}
           className="input"
         />
-        <button className="btn-link" type="submit" style={{border : "none"}}>
-          {isLoading ? "Adding..." : "Add"}
+        <button
+          className="btn-link"
+          type="submit"
+          style={{ border: "none", marginBottom: "10px" }}
+        >
+          add
         </button>
       </form>
       {status.success && <p className="successText">{status.success}</p>}

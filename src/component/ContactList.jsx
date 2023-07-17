@@ -24,9 +24,6 @@ export default function ContactList() {
     };
     fetchData();
   }, []);
-  const linkToContactDetails = (id) => {
-    navigate(`/ContactDetails/${id}`);
-  };
   const contactDeleteHandler = async (id) => {
     try {
       await axios.delete(`${CONTACTS_LIST_API}/${id}`);
@@ -51,10 +48,13 @@ export default function ContactList() {
             return (
               <div className="contact-List" key={id}>
                 <div className="contact-list__header">
-                  <h4 onClick={() => linkToContactDetails(id)}>{name}</h4>
+                  <h4>{name}</h4>
                 </div>
                 <div className="changes-btn">
-                  <Link className="btn-link" to={`/`}>
+                  <Link className="btn-details" to={`/ContactDetails/${id}`}>
+                    details
+                  </Link>
+                  <Link className="btn-link" to={`/EditContacts/${id}`}>
                     edit
                   </Link>
                   <button

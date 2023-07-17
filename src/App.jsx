@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Home from './Home';
 import NewContact from './NewContact';
 import ContactDetails from './ContactDetails';
+import EditContacts from './editContacts';
 function App() {
-
   return (
     <div className="App">
       <Routes>
@@ -14,6 +14,10 @@ function App() {
         <Route
           path="/ContactDetails/:id"
           element={<ContactDetails></ContactDetails>}
+        ></Route>
+        <Route
+          path="/EditContacts/:id"
+          element={<EditContacts></EditContacts>}
         ></Route>
       </Routes>
     </div>
